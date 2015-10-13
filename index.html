@@ -1,0 +1,17 @@
+<html>
+  <head>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"> </script>
+  <script>
+ // var url = "https://maps.google.com/maps/api/geocode/json?address=berlin";
+    var url= "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/KONSTANZ.json?includeTimeseries=true&includeCurrentMeasurement=true" ;
+    jQuery.getJSON(url).done( function(data){
+      document.body.innerHTML = "Pegel in "+data.longname+": " + data.timeseries[0].currentMeasurement.value;
+      });
+  </script>
+  
+    <title></title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body></body>
+</html>
